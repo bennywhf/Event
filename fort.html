@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+        .divScroll {
+            overflow:scroll;
+            height:500px;
+            width:800px;
+        }
+    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,7 +49,7 @@
               <input type="text" placeholder="Email" class="form-control">
             </div>
             <div class="form-group" ng-controller = "login as login">
-              <input type="password" placeholder="Password" class="form-control" ng-show="login.bar">
+              <input type="password" placeholder="Password" class="form-control">
             </div>
             <button type="submit" class="btn btn-success">Log in</button>
             <button type="submit" class="btn btn-success">Sign up</button>
@@ -52,9 +59,51 @@
     </nav>
 	<br />
 	<br />
+	<br />	
+		<ul class="nav nav-tabs" role="tablist" ng-controller="tabs as t">
+			<li ng-class="{active:t.isSelected(1)}" role="presentation">
+				<a href ng-click="t.setTab(1)">
+					Home
+				</a>
+			</li>
+			<li ng-class="{active:t.isSelected(2)}" role="presentation">
+				<a href ng-click="t.setTab(2)">
+					Art/Music
+				</a>
+			</li>
+			<li ng-class="{active:t.isSelected(3)}" role ng-click="tabs.setTab(3)">
+				<a href ng-click="t.setTab(3)">
+					Tech
+				</a>
+			</li>
+			<li ng-class="{active:t.isSelected(4)}" role="presentation">
+				<a href ng-click="t.setTab(4)">
+					Food
+				</a>
+			</li>
+			<li ng-class="{active:t.isSelected(5)}" role="presentation">
+				<a href ng-click="t.setTab(5)">
+					Park
+				</a>
+			</li>
+		</ul>
 	<br />
-        <div class = "container">
-          <h1>Hello, world!</h1>
-      </div>
+	    <div class="divScroll">
+          <div class="list-group">
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading">Date</h4>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </a>
+            <a href="#" class="list-group-item active">
+              <h4 class="list-group-item-heading">Date</h4>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </a>
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading">Date</h4>
+              <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </a>
+          </div>
+		</div>
+          
   </body>
 </html>
