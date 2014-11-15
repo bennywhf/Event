@@ -87,21 +87,17 @@
 					Park
 				</a>
 			</li>
-			<li ng-class="{active:t.isSelected(6)}" role="presentation">
-				<a href ng-click="t.setTab(6)">
-					<button type="submit" class="btn btn-success">Submit Event</button>
-				</a>
-			</li>			
+
+	
 		</ul>
 	<br />
-	<center>
-	    <div class="divScroll" ng-show="t.isSelected(1)">
-          <div class="list-group">
-            <a href="#" class="list-group-item">
+	    <div ng-show="t.isSelected(1)">
+			<div class="list-group">
+            <a href="#" class="list-group-item" <!--ng-class="{active: ng-mouseover}"-->>
               <h4 class="list-group-item-heading">Date</h4>
               <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             </a>
-            <a href="#" class="list-group-item active">
+            <a href="#" class="list-group-item ">
               <h4 class="list-group-item-heading">Date</h4>
               <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             </a>
@@ -110,9 +106,34 @@
               <p class="list-group-item-text">Donec id elit nt eget metus. Maecenas sed diam eget risus varius blandit.</p>
             </a>
           </div>
+		  <div ng-controller = "form as form">
+			<button  class="btn btn-success" ng-click = "form.toggle()">Submit Event</button>
+			<br />
+			<form ng-hide="form.on">
+			Details:
+			<br>
+			<textarea name= "details">place holder</textarea>
+				<br />
+			Type of Event:
+			<br>
+			<select name="type">
+			<option value="volvo">Art/Music</option>
+			<option value="saab">Tech</option>
+			<option value="fiat">Food</option>
+			<option value="audi">Park</option>
+			</select>
+			<br />
+			Link:
+			<br />
+			<input type="text" name="url">
+			<br />
+			<button type = "submit" target="adduser.html">Submit</button>
+            </form>
+		</div>
+			
 		</div>
 	
-	    <div class="divScroll" ng-show="t.isSelected(2)">
+	    <div  ng-show="t.isSelected(2)">
           <div class="list-group">
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading">Date</h4>
@@ -129,7 +150,7 @@
           </div>
 		</div>	
 
-	    <div class="divScroll" ng-show="t.isSelected(3)">
+	    <div ng-show="t.isSelected(3)">
           <div class="list-group">
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading">Date</h4>
@@ -146,7 +167,7 @@
           </div>
 		</div>
 
-	    <div class="divScroll" ng-show="t.isSelected(4)">
+	    <div ng-show="t.isSelected(4)">
           <div class="list-group">
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading">Date</h4>
@@ -163,7 +184,7 @@
           </div>
 		</div>
 
-	    <div class="divScroll" ng-show="t.isSelected(5)">
+	    <div  ng-show="t.isSelected(5)">
           <div class="list-group">
             <a href="#" class="list-group-item">
               <h4 class="list-group-item-heading">Date</h4>
@@ -179,13 +200,10 @@
             </a> 
           </div>
 		</div>
-	</center>
-		<div ng-show="t.isSelected(6)">
 
 
-			
-		</div>
 
-</div>	
+	</div>
+
   </body>
 </html>
