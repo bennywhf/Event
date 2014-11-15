@@ -87,6 +87,11 @@
 					Park
 				</a>
 			</li>
+			<li ng-class="{active:t.isSelected(6)}" role="presentation">
+				<a href ng-click="t.setTab(6)">
+					<button type="submit" class="btn btn-success">Submit Event</button>
+				</a>
+			</li>			
 		</ul>
 	<br />
 	<center>
@@ -174,7 +179,13 @@
             </a> 
           </div>
 		</div>
-    </center>
+	</center>
+		<div ng-show="t.isSelected(6)">
+
+
+			
+		</div>
+
 </div>	
   </body>
 </html>
