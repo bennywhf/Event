@@ -1,7 +1,8 @@
 (function(){
   var app = angular.module('bulletinapp', []);
   
-  var tabs =app.controller('tabs',function(){
+  var tabs = app.controller('tabs',function(){
+	
 	this.tab=1;
 	
 	this.setTab = function(t){
@@ -9,13 +10,16 @@
 	};
 	
 	this.isSelected = function(tab){
-		tab===this.tab;
+		return tab===this.tab;
 	};
   });
+
   var login = app.controller('login', function(){
     this.bar = false;
     this.toggle = function(){
         this.bar = !(this.bar);
     };
   });
+
+
 })();

@@ -31,8 +31,8 @@
 
   <title>The Bulletin Board</title>
   </head>
-  <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-app = "bulletinapp">
+  <body ng-app = "bulletinapp" >
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -44,14 +44,14 @@
           <a class="navbar-brand" href="#">The Bulletin Board</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <form class="navbar-form navbar-right" role="form">
+          <form class="navbar-form navbar-right" role="form"  >
             <div class="form-group">
               <input type="text" placeholder="Email" class="form-control">
             </div>
-            <div class="form-group" ng-controller = "login as login">
-              <input type="password" placeholder="Password" class="form-control">
+            <div class="form-group" >
+              <input type="password" placeholder="Password" class="form-control" ng-hide="login.bar">
             </div>
-            <button type="submit" class="btn btn-success">Log in</button>
+            <button type="submit" class="btn btn-success" ng-click = "login.toggle()" >Log in</button>
             <button type="submit" class="btn btn-success">Sign up</button>
           </form>
         </div><!--/.navbar-collapse -->
